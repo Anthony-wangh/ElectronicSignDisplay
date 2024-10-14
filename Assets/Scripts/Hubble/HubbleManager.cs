@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class RecieveSignEventArg: EventArgs
@@ -11,6 +12,9 @@ public class HubbleManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject ItemPrefabs;
+
+    [SerializeField]
+    private List<Sprite> IconType; 
 
     public const string RecieveSignEventTag = "OnRecieveSign";
     // Start is called before the first frame update
@@ -42,15 +46,20 @@ public class HubbleManager : MonoBehaviour
         GameObject item=GameObject.Instantiate(ItemPrefabs,transform);
         item.transform.position = Vector3.zero;
         item.transform.localScale = 0.5f*Vector3.one;
-        var render=item.GetComponent<Renderer>();
-        render.material.color = Color.red;
+
+        var spriteRender = item.GetComponent<SpriteRenderer>();
+        var index = UnityEngine.Random.Range(0, IconType.Count);
+        spriteRender.sprite = IconType[index];
+
+        //var render=item.GetComponent<Renderer>();
+        //render.material.color = Color.red;
         var hubble = item.GetComponent<HubbleItem>();
         hubble.SetTxture(texture);
         var targetScale = UnityEngine.Random.Range(0.9f, 1.2f);
         item.transform.DOScale(targetScale * Vector3.one,1).SetEase(Ease.OutBack).onComplete=()=> {
 
             hubble.IsFree = true;
-            render.material.color = Color.white;
+            //render.material.color = Color.white;
         };
     }
 }

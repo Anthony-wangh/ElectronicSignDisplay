@@ -34,6 +34,17 @@ public class HubbleItem : MonoBehaviour
             return;
         Icon.texture = texture;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!IsFree) return;
+
+        Vector2 force=new Vector2(transform.position.x, transform.position.y) -collision.GetContact(0).point;
+        force.Normalize();
+
+        _rigidbody.AddForce(force);
+    }
+
     // Update is called once per frame
     void Update()
     {

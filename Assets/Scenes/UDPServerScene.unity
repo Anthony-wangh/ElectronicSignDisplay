@@ -1329,6 +1329,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ItemPrefabs: {fileID: 107194101742612920, guid: 14042945e8c13674f92df27396f6d7ab, type: 3}
+  IconType:
+  - {fileID: 21300000, guid: cf35119f7b53e1c419bb1c7cb3af6dda, type: 3}
+  - {fileID: 21300000, guid: 3995627625e4d9d4386409a2bf99e8cc, type: 3}
+  - {fileID: 21300000, guid: c4797b928419e844aaef5d3f039aa7f3, type: 3}
+  - {fileID: 21300000, guid: 39cdb9ff05036254493f8b78679c69a0, type: 3}
+  - {fileID: 21300000, guid: 1652f2efa5721a446892d51b273576dc, type: 3}
+  - {fileID: 21300000, guid: db1bb1484620e8e4d8afff9f6d5c6514, type: 3}
+  - {fileID: 21300000, guid: b60bdd9bec74acf4f8af4ed562d149ac, type: 3}
+  - {fileID: 21300000, guid: 16ae76088a3d7e147921f97b001083e6, type: 3}
+  - {fileID: 21300000, guid: d9f0c523cc024974fb5620d309b3bb54, type: 3}
+  - {fileID: 21300000, guid: 3320bc4a868201f4aa3895c523fcdebf, type: 3}
+  - {fileID: 21300000, guid: 3afbf3e535d030047874f361fb7ec346, type: 3}
+  - {fileID: 21300000, guid: fd2b5a6b515861c4f980ebd7b7fdaad0, type: 3}
+  - {fileID: 21300000, guid: 793ffa612b1b3de4996b7ebac0393def, type: 3}
+  - {fileID: 21300000, guid: 0607a023efa482e4d9055e78cf332f3d, type: 3}
+  - {fileID: 21300000, guid: c04363870dc953b4d991e02af07d773a, type: 3}
+  - {fileID: 21300000, guid: 62fff89cb0b622242bf13b19340889eb, type: 3}
 --- !u!4 &1366702825
 Transform:
   m_ObjectHideFlags: 0
