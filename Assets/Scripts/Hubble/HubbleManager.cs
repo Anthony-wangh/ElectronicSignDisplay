@@ -47,6 +47,9 @@ public class HubbleManager : MonoBehaviour
         item.transform.position = Vector3.zero;
         item.transform.localScale = 0.5f*Vector3.one;
 
+        var collider = item.GetComponent<Collider2D>();
+        collider.enabled = false;
+
         var spriteRender = item.GetComponent<SpriteRenderer>();
         var index = UnityEngine.Random.Range(0, IconType.Count);
         spriteRender.sprite = IconType[index];
@@ -56,10 +59,12 @@ public class HubbleManager : MonoBehaviour
         var hubble = item.GetComponent<HubbleItem>();
         hubble.SetTxture(texture);
         var targetScale = UnityEngine.Random.Range(0.9f, 1.2f);
-        item.transform.DOScale(targetScale * Vector3.one,1).SetEase(Ease.OutBack).onComplete=()=> {
+        item.transform.DOScale(10,1).SetEase(Ease.OutBack).onComplete=()=> {
 
             hubble.IsFree = true;
-            //render.material.color = Color.white;
+            item.transform.DOScale(targetScale * Vector3.one, 1).SetEase(Ease.OutBack).onComplete = () => {
+                collider.enabled = true;
+            };
         };
     }
 }
